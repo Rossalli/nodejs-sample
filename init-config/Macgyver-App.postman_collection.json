@@ -1,0 +1,245 @@
+{
+	"variables": [],
+	"info": {
+		"name": "Macgyver-App",
+		"_postman_id": "c69ceabf-2819-c271-077a-d2c1123b7bc1",
+		"description": "",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "user",
+			"description": "",
+			"item": [
+				{
+					"name": "save user",
+					"request": {
+						"url": "localhost:8080/users",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"Who\",\n  \"login\" : \"who\",\n  \"password\" : \"123@who\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "update user",
+					"request": {
+						"url": "localhost:8080/users/3",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"Who Edited\",\n  \"login\" : \"who\",\n  \"password\" : \"123@who\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "get user by id",
+					"request": {
+						"url": "localhost:8080/users/3",
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "delete user",
+					"request": {
+						"url": "localhost:8080/users/3",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "get all users",
+					"request": {
+						"url": "localhost:8080/users",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "tip",
+			"description": "",
+			"item": [
+				{
+					"name": "save tip",
+					"request": {
+						"url": "localhost:8080/tips",
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"BugMeNot2\",\n  \"description\" : \"Site que possui logins de diversos sites. Por exemplo: Quero realizar o download de algo no site da Oracle e não quero realizar cadastro. Nesse site você pesquisa pelo dominio e ele disponibiliza uma lista de logins pra serem utilizados.\",\n  \"link\" : \"http://bugmenot.com\",\n  \"category\" : \"GERAL\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "update tip",
+					"request": {
+						"url": "localhost:3000/tips/1",
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"description": ""
+							},
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"name\" : \"BugMeNot\",\n  \"description\" : \"Site que possui logins de diversos sites. Por exemplo: Quero realizar o download de algo no site da Oracle e não quero realizar cadastro. Nesse site você pesquisa pelo dominio e ele disponibiliza uma lista de logins pra serem utilizados.\",\n  \"link\" : \"http://bugmenot.com\",\n  \"category\" : \"GERAL\"\n}"
+						},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "get tip by id",
+					"request": {
+						"url": "localhost:8080/tips/1",
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "delete tips",
+					"request": {
+						"url": "localhost:8080/tips/2",
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{access_token}}",
+								"description": ""
+							}
+						],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				},
+				{
+					"name": "get all tips",
+					"request": {
+						"url": "localhost:8080/tips",
+						"method": "GET",
+						"header": [],
+						"body": {},
+						"description": null
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "login",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"var jsonData = JSON.parse(responseBody);",
+							"postman.setEnvironmentVariable(\"access_token\", jsonData.access_token);"
+						]
+					}
+				}
+			],
+			"request": {
+				"url": "localhost:8080/login",
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"description": ""
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"login\" : \"admin\",\n    \"password\" : \"admin\"\n}"
+				},
+				"description": null
+			},
+			"response": []
+		}
+	]
+}
