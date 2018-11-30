@@ -54,7 +54,7 @@ Pronto! Sua aplicação já estará rodando.
 
 ## POSTMAN
 
-Para consumir sua APIs utilize o postman, na pasta ```init-config/postman``` existe a collection da API. Execute primeiro o serviço de login para que você possa consumir os outros serviços (devido a autenticação). Não se preocupe! A collection do postman já pega automaticamente o token e passa para as outras requisições.
+Para consumir sua APIs utilize  a collection do postman ```Macgyver-App.postman_collection``` na pasta ```init-config``` existe a collection da API. Execute primeiro o serviço de login para que você possa consumir os outros serviços (devido a autenticação). Não se preocupe! A collection do postman já pega automaticamente o token e passa para as outras requisições.
 
 ## FRONTEND
 
