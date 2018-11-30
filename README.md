@@ -24,7 +24,7 @@ npm install
 Rode o script ``` db.sql``` localizado na pasta ```init-config```
 
 ### Arquivo .env
-Além disso é necessário criar o arquivo ``` .env. ``` Esse arquivo deve ser criado na pasta raiz do projeto. Crie o arquivo e copie o conteúdo do arquivo ``` .env_sample``` para ele. Esse arquivo possui as informações de configuração da sua aplicação. Onde:
+Além disso é necessário criar o arquivo ``` .env. ``` Esse arquivo deve ser criado na pasta raiz do projeto. Crie o arquivo e copie o conteúdo do arquivo ``` sample.env``` para ele. Esse arquivo possui as informações de configuração da sua aplicação. Onde:
 
 
 DB_HOST -> host do banco de dados
